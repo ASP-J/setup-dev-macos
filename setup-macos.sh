@@ -59,7 +59,7 @@ export NVM_DIR="$HOME/.nvm"
 echo "Instalando Node.js LTS..."
 nvm install --lts
 nvm use --lts
-nvm alias default lts/*
+nvm alias default "lts/*"
 
 # Instala Yarn
 echo "Instalando Yarn..."
