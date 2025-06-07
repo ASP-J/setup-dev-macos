@@ -73,6 +73,14 @@ brew install --cask docker
 echo "Instalando Visual Studio Code..."
 brew install --cask visual-studio-code
 
+# Instala Cursor (AI-powered code editor)
+echo "Instalando Cursor..."
+brew install --cask cursor
+
+# Instala Warp (modern terminal)
+echo "Instalando Warp..."
+brew install --cask warp
+
 # Gera a chave SSH
 echo "Gerando chave SSH..."
 ssh-keygen -t rsa -b 4096 -C "seu.email@exemplo.com"
