@@ -95,14 +95,29 @@ read -p "Após adicionar a chave ao GitHub, pressione Enter para continuar..."
 echo "Instalando Oh My Zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# Clona repositório com configurações do .zshrc
+echo "Clonando repositório com configurações do .zshrc..."
+TEMP_DIR=$(mktemp -d)
+git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git "$TEMP_DIR"
+
+# Verifica se o arquivo .zshrc existe no repositório
+if [ -f "$TEMP_DIR/.zshrc" ]; then
+    echo "Copiando configurações do .zshrc..."
+    cp "$TEMP_DIR/.zshrc" ~/.zshrc
+    echo "Arquivo .zshrc atualizado com as configurações do repositório."
+else
+    echo "Arquivo .zshrc não encontrado no repositório. Mantendo configurações padrão."
+    # Muda tema para Agnoster como fallback
+    sed -i '' 's/ZSH_THEME=".*"/ZSH_THEME="agnoster"/' ~/.zshrc
+fi
+
+# Limpa o diretório temporário
+rm -rf "$TEMP_DIR"
+
 # Instala Powerline fonts
 echo "Instalando fontes Powerline..."
 brew tap homebrew/cask-fonts
 brew install --cask font-meslo-lg-nerd-font
-
-# Muda tema para Agnoster
-echo "Configurando tema Agnoster..."
-sed -i '' 's/ZSH_THEME=".*"/ZSH_THEME="agnoster"/' ~/.zshrc
 
 # Define Zsh como shell padrão
 echo "Definindo Zsh como shell padrão..."
