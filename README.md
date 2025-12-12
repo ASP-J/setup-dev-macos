@@ -14,6 +14,8 @@ Script automatizado para configuração de ambiente de desenvolvimento no macOS,
 - **Yarn** - Gerenciador de pacotes JavaScript
 - **Docker Desktop** - Plataforma de containerização
 - **Visual Studio Code** - Editor de código
+- **Cursor** - Editor de código com IA integrada
+- **Warp** - Terminal moderno com recursos avançados
 
 ### Configurações do terminal
 - **Oh My Zsh** - Framework para Zsh com plugins e temas
